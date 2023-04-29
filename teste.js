@@ -1,7 +1,6 @@
 let num = [1,2,3,4,5,6,7,8,9,10];
 let v1 = 1;
 let v2 = 1;
-let v3 = 2;
 
 for(let i=2; i<=num.length; i++) {
     if (num[i]< v1) {
