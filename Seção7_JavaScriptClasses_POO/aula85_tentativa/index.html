@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de cadastro</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <section>
+        <form class="form">
+            <fieldset>
+                <h1>Formulário de cadastro</h1>
+                <ul>
+                    <li> Nenhum campo pode estar vazio</li>
+                    <li> Usuário só poderá conter letras e/ou números</li>
+                    <li> Usuário deverá ter entre 3 e 12 caracteres</li>
+                    <li> Senha precisar ter entre 6 e 12 caracteres</li>
+                </ul>
+
+                <label>
+                    Nome:
+                    <input class="inputs" id="nome">
+                </label>
+                <div id="Nome"></div>
+
+                <label>
+                    Sobrenome:
+                    <input class="inputs" id="sobrenome">
+                </label>
+                <div id="Sobrenome"></div>
+
+                <label>
+                    CPF:
+                    <input class="inputs" id="cpf">
+                </label>
+                <div id="CPF"></div>
+
+                <label>
+                    Usuário
+                    <input class="inputs" id="usuario">
+                </label>
+                <div id="Usuário"></div>
+
+                <label>
+                    Senha:
+                    <input class="inputs" id="senha">
+                </label>
+                <div id="Senha"></div>
+
+                <label>
+                    Repetir senha:
+                    <input class="inputs" id="repetirSenha">
+                </label>
+                <div id="RepetirSenha"></div>
+
+                <button type="submit" id="enviar">Enviar</button>
+            </fieldset>
+        </form>
+    </section>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/ValidandoCPFcomClass.js"></script>
+</body>
+
+</html>

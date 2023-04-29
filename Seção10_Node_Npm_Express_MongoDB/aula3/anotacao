@@ -1,0 +1,31 @@
+Para instalar pacotes, frameworks e modulos
+
+utilizar npm install (o que deseja baixar)
+
+no package.json, se o arquivo instalado possuir ^, quer dizer que sempre atualizara para a mais recente
+
+se instalar no formato npm install (o que deseja baixar) -E,
+então será instalado e se manterá somente a versão atualizara
+
+npm update atualiza os pacotes para a versão mais atual
+
+devDependecies -> é quando o pacote é necessário somente no desenvolvimento como o webpack (utilizamos somente o bundle no deploy da aplicação)
+
+npm instal (o que deseja baixar) --save-dev coloca o pacote no devDependencies
+
+npm instal (o que deseja baixar) --save-prod coloca o pacote no Dependecies do projeto
+
+npm instal (o que deseja baixar)@versão instala o pacote na versão informada
+
+versoes
+
+2.      1.       0
+major   minor    patch 
+
+major -> modificação que não é mais compativel com versoes major anteriores
+minor -> alteração que não quebra a compatibilidade com a major
+patch -> correção de bugs
+
+^ -> atualiza a minor e a patch
+~ -> atualiza somente a versao patch
+
