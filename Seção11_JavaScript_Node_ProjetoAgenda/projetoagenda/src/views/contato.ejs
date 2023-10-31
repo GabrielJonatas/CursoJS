@@ -10,9 +10,14 @@
             <p class="text-center lead">Crie ou edite seu contato abaixo.</p>
 
             <%- include('includes/messages') %>
+            <div class="contatoInvalido"></div>
 
-            <form action="/contato/register" method="POST">
-                <input type="hidden" name="_csrf" value=<%= csrfToken%>>
+            <% if(contato._id) {%> 
+            <form class="form-edita-cadastro" action="/contato/edit/<%= contato._id %>" method="POST">
+            <%} else { %> 
+            <form class="form-cria-cadastro" action="/contato/register" method="POST">  
+              <%} %>
+                <input type="hidden" name="_csrf" value= <%= csrfToken %>>
                 <div class="form-group">
                   <label >Nome</label>
                   <input value="<%= contato.nome %>"  type="text" class="form-control" name="nome">

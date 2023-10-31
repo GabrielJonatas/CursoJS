@@ -1,13 +1,21 @@
-let num = [1,2,3,4,5,6,7,8,9,10];
-let v1 = 1;
-let v2 = 1;
+let maior = 0;
 
-for(let i=2; i<=num.length; i++) {
-    if (num[i]< v1) {
-        v1 = num[i];
-    } else if (num[i] > v2) {
-        v2 = num[i];
+for(let i = 1; i<=100000; i++) {
+    let max = 1;
+    let coll = i;
+
+    while(coll>1) {
+        if((coll%2) == 0) {
+            coll = coll/2;
+        } else {
+            coll = (3*coll) + 1;
+        }
+        max++;
+    }
+
+    if(max>maior) {
+        maior = max;
     }
 }
 
-console.log(v1, v2);
+console.log(maior);
