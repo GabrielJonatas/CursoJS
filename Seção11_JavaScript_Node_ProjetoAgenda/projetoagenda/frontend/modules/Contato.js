@@ -63,11 +63,18 @@ export default class Contato {
 
         if ( cellphoneInput.value != '' ) {
             if (!validator.isNumeric(cellphoneInput.value)) {
+                const p = this.criaEstilizadoP(`Digite somente números!`);
+                doc.appendChild(p);
+                doc.style.backgroundColor = '#EBB5B5';
+                error = true;
+            }
+
+            if (cellphoneInput.value.length < 10 || cellphoneInput.value.length > 11) {
                 const p = this.criaEstilizadoP(`Número de telefone inválido!`);
                 doc.appendChild(p);
                 doc.style.backgroundColor = '#EBB5B5';
                 error = true;
-            }  
+            }
         }
 
         if (emailInput.value == '' && cellphoneInput.value == '' ) {
