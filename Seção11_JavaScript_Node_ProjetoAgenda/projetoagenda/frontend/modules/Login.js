@@ -33,9 +33,17 @@ export default class Login {
         const doc = document.querySelector('.loginInvalido');
         doc.innerHTML = '';    
         const el= e.target;
+        const nameInput = el.querySelector('input[name="name"]');
         const emailInput = el.querySelector('input[name="email"]');
         const passwordInput = el.querySelector('input[name="password"]');
         let error = false;
+
+        if(!validator.isAlpha(nameInput)) {
+            const p = this.criaEstilizadoP(`Nome de ${this.tipo} Inválido!`);
+            doc.appendChild(p);
+            doc.style.backgroundColor = '#EBB5B5';
+            error = true;            
+        }
 
         if (!validator.isEmail(emailInput.value)) {
             const p = this.criaEstilizadoP(`Email de ${this.tipo} Inválido!`);

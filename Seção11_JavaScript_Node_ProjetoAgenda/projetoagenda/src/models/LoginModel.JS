@@ -3,6 +3,7 @@ const validator = require('validator');
 const bcryptjs = require('bcryptjs');
 
 const LoginSchema = new mongoose.Schema({
+    name: {type: String, required: true},
     email: {type: String, required: true},
     password: {type: String, required: true}
 });
@@ -35,15 +36,17 @@ class Login {
 
     async register () {
         this.valida();
+        // O nome precisa conter somente letras maiusculas e minusculas do alfabeto
+        if(!validator.isAlpha(this.body.name)) this.errors.push('Nome inválido');
         if(this.errors.length > 0) return;
 
         await this.userExists();
 
         if(this.errors.length > 0) return;
 
-            const salt = bcryptjs.genSaltSync();
-            this.body.password = bcryptjs.hashSync(this.body.password, salt);
-            this.user = await LoginModel.create(this.body);
+        const salt = bcryptjs.genSaltSync();
+        this.body.password = bcryptjs.hashSync(this.body.password, salt);
+        this.user = await LoginModel.create(this.body);
     }
 
     async userExists() {
@@ -68,13 +71,13 @@ class Login {
                 this.body[key] = '';
            }
         }
-        
-
-
+    
         this.body = {
             email: this.body.email,
-            password: this.body.password
+            password: this.body.password,
+            name: this.body.name
         }
+
     }
 }
 
