@@ -31,5 +31,9 @@ module.exports = {
         'react/react-in-jsx-scope': 0,
         'func-names': 0,
         'no-unused-vars': 'warn',
+        'import/no-duplicates': 0,
+        'react/jsx-no-bind': 0,
+        'react/jsx-no-useless-fragment': 0,
+        'jsx-a11y/label-has-associated-control': 0,
     },
 };
